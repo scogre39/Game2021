@@ -3,6 +3,7 @@
 [ext_resource path="res://Character.gd" type="Script" id=1]
 
 [sub_resource type="CapsuleShape" id=1]
+margin = 0.001
 radius = 0.5
 height = 1.5
 
@@ -26,3 +27,11 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
+
+[node name="AimCast" type="RayCast" parent="Head/Camera"]
+enabled = true
+cast_to = Vector3( 0, 0, -1000 )
+
+[node name="FloorRay" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.192, 0 )
+enabled = true
