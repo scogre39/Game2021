@@ -26,7 +26,7 @@ func _input(event):
 		head.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity))
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-90), deg2rad(90))
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	direction = Vector3()
 	var is_grounded = floor_ray.is_colliding()
