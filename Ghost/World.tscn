@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Apocolypse Assets/Possible Assets/SA_Bld_Apartment_Damaged_01.scn" type="PackedScene" id=1]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Apocolypse Assets/Possible Assets/SA_Bld_TownHouseLarge_Clean_01.scn" type="PackedScene" id=8]
 [ext_resource path="res://Apocolypse Assets/Possible Assets/SA_Bld_WarehouseOld_Damaged_01.scn" type="PackedScene" id=9]
 [ext_resource path="res://Apocolypse Assets/SA_Env_GrassSection_01.scn" type="PackedScene" id=10]
+[ext_resource path="res://Enemy.gd" type="Script" id=11]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "SA_Bld_HospitalBuildingSmall_01"
@@ -118,6 +119,7 @@ surfaces/0 = {
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.28612, -23.6609 )
+script = ExtResource( 11 )
 
 [node name="SA_Bld_HospitalBuildingSmall_01" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1.89464e-15, 1, -1.94707e-07, -4.37114e-08, -1.94707e-07, -1, -1, 1.06581e-14, 4.37114e-08, -15, 0, -15 )
@@ -144,102 +146,102 @@ transform = Transform( -1, 8.74227e-08, -2.98272e-14, 0, -1.94707e-07, -0.999999
 mesh = SubResource( 6 )
 
 [node name="Character" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9923, 33.2862, -1.1836 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9923, 2.2862, 0.816401 )
 
 [node name="Floors" type="Node" parent="."]
 
-[node name="SA_Env_GrassSection_11" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass -30, 15" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, -30, 0, 15 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_12" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass -15, 30" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -0.999998, 0, 0.999998, -1.19209e-07, -15, 0, 30 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_05" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass -30, 30" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -0.999997, 0, 0.999997, -1.19209e-07, -30, 0, 30 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_03" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass 0, 30" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -0.999999, 0, 0.999999, -1.19209e-07, 0, 0, 30 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_02" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass 15, 30" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -0.999999, 0, 0.999999, -1.19209e-07, 15, 0, 30 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_04" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass 30, 30" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 30, 0, 30 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_01" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass 30, 15" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -0.999999, 0, 0.999999, -1.19209e-07, 30, 0, 15 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_06" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass 15, 15" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 15, 0, 15 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_07" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass 0, 15" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0, 0, 15 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_08" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass -15, 15" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, -15, -1.78814e-06, 15 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_16" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass 15, -15" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -0.999999, 0, 0.999999, -1.19209e-07, 15, 0, -15 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_09" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass -30, 0" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, -30, 0, 0 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_18" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass -15, -15" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -0.999998, 0, 0.999998, -1.19209e-07, -15, 0, -15 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_17" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass 0, -15" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -0.999999, 0, 0.999999, -1.19209e-07, 0, 0, -15 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_15" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass 30, -15" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -0.999999, 0, 0.999999, -1.19209e-07, 30, 0, -15 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_24" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass 45, -15" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -0.999999, 0, 0.999999, -1.19209e-07, 45, 0, -15 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_14" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass 45, 0" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 45, 0, 0 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_13" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass 15, 0" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 15, 0, 0 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_20" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass -30, -15" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -0.999997, 0, 0.999997, -1.19209e-07, -30, 0, -15 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_21" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass 45, 15" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 45, 0, 15 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_19" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass 45, 30" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 45, 0, 30 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_23" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass 30, 0" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -0.999999, 0, 0.999999, -1.19209e-07, 30, 0, 0 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_22" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass 0, 0" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0, 0, 0 )
 mesh = SubResource( 7 )
 
-[node name="SA_Env_GrassSection_10" parent="Floors" instance=ExtResource( 10 )]
+[node name="Grass -15, 0" parent="Floors" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, -15, 0, 0 )
 mesh = SubResource( 7 )

@@ -2,7 +2,7 @@ extends KinematicBody
 
 var speed = 7
 var acceleration = 20
-var gravity = 9.8
+var gravity = 25
 var jump_power = 250
 var falling = Vector3() 
 
@@ -13,7 +13,7 @@ var mouse_sensitivity = 0.05
 var direction = Vector3()
 var velocity = Vector3()
 var fall = Vector3()
-
+onready var floorray = $FloorRay
 onready var head = $Head 
 onready var aimcast = $Head/Camera/AimCast
 
@@ -29,7 +29,7 @@ func _input(event):
 func _physics_process(delta):
 	direction = Vector3()
 	velocity.y -= gravity
-	if Input.is_action_just_pressed("jump"):# and FloorRay.():
+	if Input.is_action_just_pressed("jump") and floorray.is_colliding():
 		velocity.y += jump_power
 	velocity = move_and_slide(velocity, Vector3.UP)
 		

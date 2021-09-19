@@ -2,13 +2,13 @@ extends KinematicBody
 
 var speed = 7
 var acceleration = 20
-var gravity = 5
-var jump_power = 75
+var gravity = 9.8
+var jump_power = 250
 var falling = Vector3() 
 
 var damage = 100
 
-var mouse_sensitivity = 0.5
+var mouse_sensitivity = 0.05
 
 var direction = Vector3()
 var velocity = Vector3()
@@ -16,7 +16,7 @@ var fall = Vector3()
 
 onready var head = $Head 
 onready var aimcast = $Head/Camera/AimCast
-onready var floor_ray = $FloorRay
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -26,15 +26,14 @@ func _input(event):
 		head.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity))
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-90), deg2rad(90))
 
-func _physics_process(_delta):
-	
+func _physics_process(delta):
+	print(is_on_floor())
 	direction = Vector3()
-	var is_grounded = floor_ray.is_colliding()
-	if Input.is_action_just_pressed("jump") and is_grounded:
-		velocity.y = jump_power
+	velocity.y -= gravity
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y += jump_power
 	velocity = move_and_slide(velocity, Vector3.UP)
-	
-func _process(delta):		
+		
 	if Input.is_action_just_pressed("fire"):
 		if aimcast.is_colliding():
 			var target = aimcast.get_collider()
@@ -63,9 +62,6 @@ func _process(delta):
 		direction += transform.basis.x
 		
 	direction = direction.normalized()
-	velocity = velocity + direction
 	velocity = velocity.linear_interpolate(direction * speed, acceleration * delta)
-	velocity.y -= gravity
-	velocity = move_and_slide(velocity, Vector3.UP)
+	velocity = move_and_slide(direction * speed, Vector3.UP)
 	move_and_slide(velocity, Vector3.UP)
-	
