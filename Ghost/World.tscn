@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Apocolypse Assets/Possible Assets/SA_Bld_Apartment_Damaged_01.scn" type="PackedScene" id=1]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://Apocolypse Assets/Possible Assets/SA_Bld_TownHouseLarge_Clean_01.scn" type="PackedScene" id=8]
 [ext_resource path="res://Apocolypse Assets/Possible Assets/SA_Bld_WarehouseOld_Damaged_01.scn" type="PackedScene" id=9]
 [ext_resource path="res://Apocolypse Assets/SA_Env_GrassSection_01.scn" type="PackedScene" id=10]
-[ext_resource path="res://Enemy.gd" type="Script" id=11]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "SA_Bld_HospitalBuildingSmall_01"
@@ -119,7 +118,6 @@ surfaces/0 = {
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.28612, -23.6609 )
-script = ExtResource( 11 )
 
 [node name="SA_Bld_HospitalBuildingSmall_01" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1.89464e-15, 1, -1.94707e-07, -4.37114e-08, -1.94707e-07, -1, -1, 1.06581e-14, 4.37114e-08, -15, 0, -15 )

@@ -2,8 +2,8 @@ extends KinematicBody
 
 var speed = 7
 var acceleration = 20
-var gravity = 25
-var jump_power = 250
+var gravity = 15
+var jump_power = 175
 var falling = Vector3() 
 
 var damage = 100
@@ -13,9 +13,10 @@ var mouse_sensitivity = 0.05
 var direction = Vector3()
 var velocity = Vector3()
 var fall = Vector3()
-onready var floorray = $FloorRay
+
 onready var head = $Head 
 onready var aimcast = $Head/Camera/AimCast
+onready var floorray = $FloorRay
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
