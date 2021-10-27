@@ -22,6 +22,8 @@ surfaces/0 = {
 [node name="Node" type="Node"]
 
 [node name="SA_Env_GrassSection_01" parent="." instance=ExtResource( 1 )]
+cast_shadow = 2
+generate_lightmap = false
 mesh = SubResource( 1 )
 
 [node name="Character" parent="." instance=ExtResource( 2 )]

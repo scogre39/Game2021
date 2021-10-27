@@ -21,19 +21,22 @@ onready var floorray = $FloorRay
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+#This makes the head follow the mouse movement
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg2rad(-event.relative.x * mouse_sensitivity))
 		head.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity))
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-90), deg2rad(90))
 
+#Jump code using both gravity to pull down and jump power to go up
 func _physics_process(delta):
 	direction = Vector3()
 	velocity.y -= gravity
 	if Input.is_action_just_pressed("jump") and floorray.is_colliding():
 		velocity.y += jump_power
 	velocity = move_and_slide(velocity, Vector3.UP)
-		
+	
+	#SHooting code, paired with the enemy code the enemy will disapear when hit enough times	
 	if Input.is_action_just_pressed("fire"):
 		if aimcast.is_colliding():
 			var target = aimcast.get_collider()
@@ -41,7 +44,7 @@ func _physics_process(delta):
 				print("Hit Enemy")
 				target.health -= damage
 		
-	
+	#Basic movement + escape to make the mouse visable again
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
