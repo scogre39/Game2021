@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Character.gd" type="Script" id=1]
 [ext_resource path="res://Tape_001.material" type="Material" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Lens_001.material" type="Material" id=4]
 [ext_resource path="res://AR70(1).material" type="Material" id=5]
 [ext_resource path="res://Metal_001.material" type="Material" id=6]
-[ext_resource path="res://UserInterface.gd" type="Script" id=7]
 
 [sub_resource type="CapsuleShape" id=1]
 margin = 0.001
@@ -123,22 +122,3 @@ spot_angle = 10.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0544282, -1.192, 0 )
 enabled = true
 cast_to = Vector3( 0, -0.1, 0 )
-
-[node name="UserInterface" type="Control" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="UserInterface"]
-margin_left = 860.608
-margin_top = 532.757
-margin_right = 900.608
-margin_bottom = 546.757
-rect_scale = Vector2( 2.5, 2.5 )
-text = "30/30"
-__meta__ = {
-"_edit_use_anchors_": false
-}
