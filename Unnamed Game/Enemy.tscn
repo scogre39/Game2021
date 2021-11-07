@@ -79,7 +79,7 @@ surfaces/4 = {
 }
 
 [sub_resource type="CylinderShape" id=4]
-radius = 20.0
+radius = 470.073
 height = 4.0
 
 [node name="Enemy" type="KinematicBody"]
@@ -108,11 +108,11 @@ material/4 = null
 
 [node name="Area" type="Area" parent="."]
 
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
+[node name="CollisionShape" type="CollisionShape" parent="Area" groups=["Enemy"]]
 shape = SubResource( 4 )
 
 [node name="RayCast" type="RayCast" parent="."]
-cast_to = Vector3( 0, 0, -9 )
+cast_to = Vector3( 0, 0, -200 )
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
