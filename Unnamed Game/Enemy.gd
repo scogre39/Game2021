@@ -1,9 +1,9 @@
 extends KinematicBody
 
 var Character
-var follow_player = false 
+var follow_Character = false 
 var move_speed = 100 
-var health = 2
+var health = 3
 
 func _ready():
 	pass
@@ -13,7 +13,7 @@ func _process(delta):
 		queue_free()
 	
 func _physics_process(delta):
-	if follow_player == true:
+	if follow_Character == true:
 		var pos = Character.global_transform.origin
 		var facing = -global_transform.basis.z
 		look_at(pos, Vector3.UP)
@@ -25,13 +25,14 @@ func _on_Area_body_entered(body):
 	if body.name == "Character":
 		$RayCast.set_enabled(true)
 		print("found player")
-		follow_player == true
+		follow_Character == true
 		Character = body
+		
 
 
 func _on_Area_body_exited(body):
 	if body.name == "Character":
 		$RayCast.set_enabled(false)
 		print("lost player")
-		follow_player == false
+		follow_Character == false
 		

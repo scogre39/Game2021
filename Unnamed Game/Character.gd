@@ -6,7 +6,7 @@ var gravity = 15
 var jump_power = 175
 var falling = Vector3() 
 
-var damage = 100
+var damage = 1
 
 var mouse_sensitivity = 0.05
 
@@ -47,21 +47,13 @@ func _physics_process(delta):
 	#Basic movement + escape to make the mouse visable again
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		
 	if Input.is_action_pressed("move_foward"):
-		
 		direction -= transform.basis.z
-		
 	elif Input.is_action_pressed("move_backward"):
-		
 		direction += transform.basis.z
-		
 	if Input.is_action_pressed("move_left"):
-		
 		direction -= transform.basis.x
-		
 	elif Input.is_action_pressed("move_right"):
-		
 		direction += transform.basis.x
 		
 	direction = direction.normalized()
