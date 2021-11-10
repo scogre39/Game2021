@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TesterEnemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GrassPanel.scn" type="PackedScene" id=2]
 [ext_resource path="res://Character.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ApocMaterial.material" type="Material" id=4]
@@ -30,5 +30,5 @@ mesh = SubResource( 1 )
 [node name="Character" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -8 )
 
-[node name="Enemy" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, -7.54979e-08, 0, 7.54979e-08, 1, 2.89913, 1.32732, -2.78328 )
+[node name="Spatial" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27942, 1.49536, -2.71385 )
