@@ -37,7 +37,8 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector3.UP)
 	
 	#SHooting code, paired with the enemy code the enemy will disapear when hit enough times	
-	if Input.is_action_just_pressed("fire"):
+	if Input.is_action_just_pressed("fire") and PlayerStats.has_ammo() > 0:
+		PlayerStats.change_ammo(-1)
 		if aimcast.is_colliding():
 			var target = aimcast.get_collider()
 			if target.is_in_group("Enemy"):

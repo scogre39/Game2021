@@ -54,6 +54,7 @@ margin_bottom = 14.0
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
 margin_right = 8.0
 margin_bottom = 14.0
+rect_min_size = Vector2( 8, 0 )
 text = ">"
 
 [node name="Option" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]

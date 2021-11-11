@@ -82,9 +82,7 @@ surfaces/4 = {
 radius = 25.0
 height = 4.0
 
-[node name="Enemy" type="KinematicBody" groups=[
-"Enemy",
-]]
+[node name="Enemy" type="KinematicBody" groups=["Enemy"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34507, 0 )
 script = ExtResource( 1 )
 

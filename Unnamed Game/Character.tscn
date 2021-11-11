@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Character.gd" type="Script" id=1]
 [ext_resource path="res://Tape_001.material" type="Material" id=2]
@@ -79,6 +79,10 @@ surfaces/4 = {
 "vertex_count": 318
 }
 
+[sub_resource type="CapsuleShape" id=4]
+radius = 0.55
+height = 1.55
+
 [node name="Character" type="KinematicBody"]
 script = ExtResource( 1 )
 
@@ -122,3 +126,13 @@ spot_angle = 10.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0544282, -1.192, 0 )
 enabled = true
 cast_to = Vector3( 0, -0.1, 0 )
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="InvulnerabilityFrames" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true

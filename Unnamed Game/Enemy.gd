@@ -11,7 +11,8 @@ func _ready():
 	print(follow_player)
 	pass
 	
-func _process(delta):
+func hit_enemy():
+	health -=1
 	if health <= 0:
 		queue_free()
 	
