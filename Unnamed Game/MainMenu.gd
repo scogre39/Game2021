@@ -26,8 +26,7 @@ func handle_selection(_current_selection):
 		get_parent().add_child(first_scene.instance())
 		queue_free()
 	elif _current_selection == 1:
-		get_parent().add_child(options_menu.instance())
-		queue_free()
+		print("Add Options")
 	elif _current_selection == 2:
 		get_tree().quit()
 
@@ -36,8 +35,11 @@ func set_current_selection(_current_selection):
 	selector_two.text = ""
 	selector_three.text = ""
 	if current_selection == 0:
-		selector_1.text = ">"
+		selector_one.text = ">"
+		print("1")
 	elif current_selection == 1:
-		selector_2.text = ">"
+		selector_two.text = ">"
+		print("2")
 	elif current_selection == 2:
 		selector_three.text = ">"
+		print("3")
