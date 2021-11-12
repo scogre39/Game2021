@@ -2,6 +2,7 @@ extends MarginContainer
 
 const first_scene = preload("res://Level1.tscn") #Preloading the first level scene 
 
+#Defining node paths as simplier variables
 onready var selector_one = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/Selector
 onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/Selector
 onready var selector_three = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/Selector
@@ -9,7 +10,7 @@ onready var selector_three = $CenterContainer/VBoxContainer/CenterContainer2/VBo
 var current_selection = 0
 
 func ready():
-	set_current_selection(0)
+	set_current_selection(0)#Settibng the current selection value to zero at the begining 
 	print("0") #CHecking to see if the intial value is 0
 
 func _process(delta):
@@ -29,7 +30,7 @@ func handle_selection(_current_selection):
 	elif _current_selection == 1:
 		print("Add Options")
 	elif _current_selection == 2:
-		get_tree().quit()
+		get_tree().quit() #Closes the game window 
 
 func set_current_selection(_current_selection):
 	selector_one.text = "" #Setting each text to empty the changing the text to > when the current selction is equal to each different selector

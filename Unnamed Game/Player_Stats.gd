@@ -1,29 +1,29 @@
 extends Node
-
+#Defining variables
 var health 
-var max_health
+var health_max
 var ammo
-var max_ammo
+var ammo_max
 
 func _ready():
-	max_health = 100
-	health = 100
-	max_ammo = 120
+	health_max = 20
+	health = 20
+	ammo_max = 120
 	ammo = 120
 	
-func change_health(amount):
+func change_health(amount): #Making the health change 
 	health += amount 
-	health = clamp(health,0, max_health)
+	health = clamp(health,0, health_max)
 	
-func change_ammo(amount):
+func change_ammo(amount):#Making the ammo change 
 	ammo += amount
-	ammo = clamp(ammo,0,max_ammo)
+	ammo = clamp(ammo,0,ammo_max)
 	
-func get_health():
-	return health 
+func get_health(): #Gives a health value
+	return (health) 
 
-func get_ammo():
-	return ammo
+func get_ammo(): #Gives an ammo value
+	return str(ammo)
 	
-func has_ammo():
+func has_ammo(): #Determines whether the player has ammo or not
 	return ammo > 0
